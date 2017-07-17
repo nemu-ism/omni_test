@@ -2,8 +2,8 @@ h1 Homes#top
 p Find me in app/views/homes/top.html.slim
 
 - if logged_in?
-  = image_tag current_user.image_url
-  = label_tag current_user.nickname
+  = image_tag current_user.try(:image_url)
+  = label_tag current_user.try(:name)
   br
   = link_to 'ログアウト', logout_path
 - else
