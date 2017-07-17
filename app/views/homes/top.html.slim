@@ -3,7 +3,14 @@ p Find me in app/views/homes/top.html.slim
 
 - if logged_in?
   = image_tag current_user.try(:image_url)
+  br
   = label_tag current_user.try(:name)
+  br
+  = label_tag current_user.try(:nickname)
+  br
+  = label_tag current_user.try(:token)
+  br
+  = label_tag current_user.try(:secret)
   br
   = link_to 'ログアウト', logout_path
 - else
