@@ -1,0 +1,10 @@
+h1 Homes#top
+p Find me in app/views/homes/top.html.slim
+
+- if logged_in?
+  = image_tag current_user.image_url
+  = label_tag current_user.nickname
+  br
+  = link_to 'ログアウト', logout_path
+- else
+  = link_to 'Twitterでログイン', 'auth/twitter'
